@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ph0-nj-QvI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="oug-Cq-Buu">
+            <objects>
+                <tableViewController id="o7P-dT-XnA" customClass="MainViewController" customModule="History_of_weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="may-ru-7qA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="cell" rowHeight="77" id="RAr-UF-l6O">
+                                <rect key="frame" x="0.0" y="28" width="375" height="77"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RAr-UF-l6O" id="yJI-Q8-RcD">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="76.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="o7P-dT-XnA" id="6Cs-lV-0EJ"/>
+                            <outlet property="delegate" destination="o7P-dT-XnA" id="Wmg-1H-CCS"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="2AK-cb-xIU"/>
+                    <connections>
+                        <segue destination="ACM-sl-Rce" kind="show" identifier="SegueIdentifier" id="YOn-JN-zOZ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G0a-BH-ZAA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1031" y="50"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="YHe-DS-Avx">
+            <objects>
+                <viewController id="ACM-sl-Rce" customClass="DetailViewController" customModule="History_of_weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1E0-5X-99e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yTT-hg-aTI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ACM-sl-Rce" id="Yxb-9J-cI4"/>
+                                    <outlet property="delegate" destination="ACM-sl-Rce" id="oZe-6p-9bu"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yTT-hg-aTI" firstAttribute="leading" secondItem="vz5-ul-w1G" secondAttribute="leading" id="6JV-8Q-5Ku"/>
+                            <constraint firstItem="vz5-ul-w1G" firstAttribute="bottom" secondItem="yTT-hg-aTI" secondAttribute="bottom" id="8KZ-s8-drS"/>
+                            <constraint firstItem="vz5-ul-w1G" firstAttribute="trailing" secondItem="yTT-hg-aTI" secondAttribute="trailing" id="LNk-OA-bZa"/>
+                            <constraint firstItem="yTT-hg-aTI" firstAttribute="top" secondItem="vz5-ul-w1G" secondAttribute="top" id="i0l-kH-nb6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vz5-ul-w1G"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="yTT-hg-aTI" id="7dE-Xg-sS6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FYO-2I-9aU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1910" y="50"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="H4P-wZ-QST">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ph0-nj-QvI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JZD-tA-a02">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="o7P-dT-XnA" kind="relationship" relationship="rootViewController" id="GqX-4c-yq5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jwg-aH-CsK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="237.59999999999999" y="49.925037481259373"/>
+        </scene>
+    </scenes>
+</document>
